@@ -1,0 +1,209 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: normal
+}
+
+:root {
+    --DesaturatedRed: hsl(0, 36%, 70%);
+    --Red: hsl(1, 100%, 69%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --DarkGrayishRed: hsl(0, 6%, 24%);
+    --gradient1: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 245, 245, 0.98) 100%);
+    /*Linear 135deg from hsl(0, 0%, 100%) to hsl(0, 100%, 98%);*/
+    --gradient2: linear-gradient(135deg, #F8BFBF 37.5%, rgba(238, 140, 140, 0.74) 100%);
+    /*Linear 135deg from hsl(0, 80%, 86%) to hsl(0, 74%, 74%);*/
+    --shadow: 0px 2px 4px rgba(47, 56, 66, 0.25);
+    --shadow2: 0px 4px 4px rgba(47, 56, 66, 0.5)
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    line-height: 1.8;
+    color: var(--DarkGrayishRed);
+}
+
+header {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient1)
+}
+
+.text-box {
+    width: 100%;
+    background: url(images/bg-pattern-desktop.svg) no-repeat center center;
+    background-size: cover
+}
+
+.img-box {
+    background: url(images/hero-desktop.jpg) no-repeat;
+    background-position: top center;
+    background-size: cover;
+    width: 100%;
+    height: 66vw;
+}
+
+h1 span {
+    display: block;
+    font-weight: 300;
+    color: var(--DesaturatedRed);
+    opacity: 0.8
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    line-height: 1.2;
+    font-weight: 600
+}
+
+p {
+    padding: 2rem 0 2.5rem 0;
+    color: var(--DesaturatedRed);
+    opacity: 0.8
+}
+
+.logo {
+    width: 10.5rem
+}
+
+form {
+    position: relative
+}
+
+input[type="email"] {
+    padding: 0 0.75rem;
+    font-size: smaller;
+    line-height: 1;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    font-family: inherit;
+    border-radius: 100px;
+    border: 1px solid var(--DesaturatedRed);
+    width: 100%;
+    outline: 0;
+    opacity: 0.5
+}
+
+input[type="submit"] {
+    border: none;
+    background: url(images/icon-arrow.svg) center, linear-gradient(135deg, #F8BFBF 37.5%, rgba(238, 140, 140, 0.74) 100%);
+    background-size: auto 35%, cover;
+    background-repeat: no-repeat;
+    width: 20%;
+    position: absolute;
+    right: 0.5rem;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 100px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out
+}
+
+
+input[type="submit"]:hover {
+    opacity: 0.7;
+    box-shadow: var(--shadow2);
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--DesaturatedRed);
+}
+
+.error {
+    color: red;
+    font-size: smaller;
+    display: block;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+    position: absolute;
+}
+
+.error-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(images/icon-error.svg) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    right: 25%;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+@media screen and (min-width:769px) {
+
+    .logo {
+        position: absolute;
+        top: 4.3vw;
+        left: 12.5vw;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .text-box {
+        width: 57.5%;
+        padding: 0 15vw 0 12.5vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .img-box {
+        background-position: center center;
+        width: 42.5%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: flex-start
+    }
+
+    .logo {
+        padding: 2rem;
+        text-align: left
+    }
+
+    .img-box {
+        order: 1
+    }
+
+    .text-box {
+        order: 2;
+        padding: 4rem 2rem;
+        text-align: center
+    }
+
+}
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 14px
+    }
+}
+
+@media screen and (min-width:1921px) {
+    html {
+        font-size: calc(1em + 0.8vw)
+    }
+}
